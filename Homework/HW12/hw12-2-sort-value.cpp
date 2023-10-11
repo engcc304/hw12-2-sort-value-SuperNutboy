@@ -60,3 +60,39 @@
         99.99 88.88 77.77 66.66
 
 */
+
+#include <stdio.h>
+
+#define MAX_STUDENTS 4
+
+struct Student {
+    char Name[50];
+    float Score;
+};
+
+int main() {
+    struct Student students[MAX_STUDENTS];
+
+    // Input information for each student
+    for (int i = 0; i < MAX_STUDENTS; i++) {
+        printf("Student %c\n", 'A' + i);
+        printf("Name : ");
+        scanf(" %[^\n]s", students[i].Name);
+        printf("Score : ");
+        scanf("%f", &students[i].Score);
+    }
+
+    // Display names
+    for (int i = 0; i < MAX_STUDENTS; i++) {
+        printf("%s ", students[i].Name);
+    }
+    printf("\n");
+
+    // Display scores
+    for (int i = 0; i < MAX_STUDENTS; i++) {
+        printf("%.2f ", students[i].Score);
+    }
+    printf("\n");
+
+    return 0;
+}
